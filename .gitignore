@@ -1,0 +1,36 @@
+# .gitignore for Python with virtual environment
+
+# Python-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+
+# Virtual environment
+venv/
+env/
+__env__/
+env.bak/
+env1/
+venv1/
+*.pyc
+
+# VSCode settings
+.vscode/
+
+# Terraform
+.terraform/
+terraform.tfstate*
+*.tfstate
+*.terraform.lock*
+
+# Secrets
+*.secrets
+*.env
+
+#Output
+output/
+
+#Mac
+.DS_Store
