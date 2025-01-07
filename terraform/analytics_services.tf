@@ -184,6 +184,7 @@ resource "aws_iam_role_policy_attachment" "athena_query_policy_attachment" {
   policy_arn = aws_iam_policy.athena_query_policy.arn
 }
 
+#BUG provider
 #resource "aws_lakeformation_permissions" "table_permissions" {
 #  permissions = ["ALL"]
 #  principal   = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/${var.aws_user}"

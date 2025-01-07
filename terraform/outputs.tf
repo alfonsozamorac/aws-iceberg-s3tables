@@ -1,7 +1,7 @@
 
 output "table_bucket" {
   description = "Bucket Table name"
-  value       = "${aws_s3tables_table_bucket.table_bucket.name}"
+  value       = aws_s3tables_table_bucket.table_bucket.name
 }
 
 output "table_bucket_arn" {
@@ -41,6 +41,6 @@ output "group_cloudwatch" {
   value = aws_cloudwatch_log_group.emr_cloudwatch.name
 }
 
-output "athena_workgroup"{
+output "athena_workgroup" {
   value = aws_athena_workgroup.workgroup.name
 }

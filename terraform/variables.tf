@@ -2,7 +2,6 @@
 variable "region" {
   description = "Location"
   type        = string
-  default     = "us-east-2"
 }
 
 variable "aws_user" {
@@ -10,8 +9,18 @@ variable "aws_user" {
   type        = string
 }
 
+variable "s3bucket_aux" {
+  description = "S3 Bucket for aux files"
+  type        = string
+}
+
+variable "s3tables_namespace" {
+  description = "S3Tables Namespace"
+  type        = string
+}
+
 variable "table_bucket" {
-  description = "Name of Namespace"
+  description = "S3Tables Bucket"
   type = object({
     name = string
     maintenance_configuration = optional(object({
@@ -24,28 +33,10 @@ variable "table_bucket" {
       })
     }))
   })
-  default = {
-    name = "poc-tablebucket"
-    maintenance_configuration = {
-      iceberg_unreferenced_file_removal = {
-        status = "enabled"
-        settings = {
-          non_current_days  = 1
-          unreferenced_days = 1
-        }
-      }
-    }
-  }
-}
-
-variable "s3tables_namespace" {
-  description = "Name of Table"
-  type        = string
-  default     = "iceberg_namespace"
 }
 
 variable "s3tables_table" {
-  description = "value"
+  description = "S3Tables Table"
   type = object({
     name = string
     maintenance_configuration = optional(object({
@@ -64,28 +55,5 @@ variable "s3tables_table" {
       })
     }))
   })
-  default = {
-    name = "iceberg_table"
-    maintenance_configuration = {
-      iceberg_compaction = {
-        status = "enabled"
-        settings = {
-          target_file_size_mb = "512"
-        }
-      }
-      iceberg_snapshot_management = {
-        status = "enabled"
-        settings = {
-          max_snapshot_age_hours = "1"
-          min_snapshots_to_keep  = "1"
-        }
-      }
-    }
-  }
 }
 
-variable "s3bucket_aux" {
-  description = "S3 Bucket for aux files"
-  type        = string
-  default     = "s3tables-aux"
-}
