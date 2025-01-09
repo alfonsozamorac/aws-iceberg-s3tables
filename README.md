@@ -4,7 +4,7 @@
 This project automates the creation and management of S3Tables that integrate with AWS analytics services such as Amazon Athena, EMR, AWS Glue Data Catalog, and AWS Lake Formation. Using Terraform, the infrastructure is provisioned to build a scalable, cost-effective data lake solution.
 
 ## Documentation
-* [S3Tables] (https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables.html)
+* [S3Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables.html)
 * [AWS Terraform Registry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 
 ## Architecture
