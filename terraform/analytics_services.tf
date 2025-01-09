@@ -140,8 +140,8 @@ resource "aws_athena_workgroup" "workgroup" {
   state = "ENABLED"
 }
 
-resource "aws_iam_role" "example_role" {
-  name = "ExampleRole"
+resource "aws_iam_role" "athena_role" {
+  name = "AthenaRole"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -180,7 +180,7 @@ resource "aws_iam_policy" "athena_query_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "athena_query_policy_attachment" {
-  role       = aws_iam_role.example_role.name
+  role       = aws_iam_role.athena_role.name
   policy_arn = aws_iam_policy.athena_query_policy.arn
 }
 

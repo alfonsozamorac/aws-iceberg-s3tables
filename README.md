@@ -10,6 +10,9 @@ This project automates the creation and management of S3Tables that integrate wi
 ## Architecture
   ![Alt text](images/s3tables_schema.png)
 
+## Prerequisites
+The AWS CLI must be set up and credentials configured
+
 ## Installation
 
 1. Replace and export with your correct value:
